@@ -1,21 +1,30 @@
+
 body {
     background-color: gainsboro;
     /* Use a system font, if none are available use an available sans-sarif */
     font-family: system-ui, sans-serif;
+    display: flex;
+    flex-direction: column; /* stacks the element vertically */
+    text-align: center; /* Ensures inline elements like <h1> are centered */
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
     margin: 0;
   }
   
-  .board {
+.board {
     display: flex;
     flex-wrap: wrap;
     width: 325px;
-  }
+    margin: 20px auto; /* centers the board */
+    justify-content: center; /* Centers squares */
+}
   
-  .sqr {
+.sqr {
     width: 30%;
     aspect-ratio: 1/1;
     border: 3px solid black;
     font-size: 64px;
     text-align: center;
-  }
+}
   
