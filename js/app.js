@@ -1,26 +1,9 @@
-//1) Define the required variables used to track the state of the game.
-
-//2) Store cached element references.
-
-//3) Upon loading, the game state should be initialized, and a function should 
-//   be called to render this game state.
-
-//4) The state of the game should be rendered to the user.
-
-//5) Define the required constants.
-
-//6) Handle a player clicking a square with a `handleClick` function.
-
-//7) Create Reset functionality.
-
-
 /*-------------------------------- Constants --------------------------------*/
 
 const squareEls = document.querySelectorAll('.sqr');
-
 const messageEl = document.getElementById('message');
-
 const resetBtnEl = document.getElementById('reset');
+const gameGifEl = document.getElementById('gamegif');
 
 const winningCombos = [
     [0,1,2],
@@ -52,7 +35,8 @@ const init = () => {
     winner = false; // Reset winner
     tie = false; // Reset tie
     turn = "X"; // Reset turn to "X"
-
+    gameGifEl.src = "images/default.gif"; // Reset to default GIF
+    console.log("GIF Path Set To:", gameGifEl.src);
     render(); // Re-render board
     console.log("Game reset!"); // Log reset action
 };
@@ -124,12 +108,28 @@ const updateBoard = () => {
 };
 
 const updateMessage = () => {
-    if (winner === false && tie === false) {
-        return messageEl.textContent = `Player's ${turn} Turn`;
-    } else if (winner === false && tie === true) {
-        return messageEl.textContent = "Game is Tied!";
+    // if (winner === false && tie === false) {
+    //     messageEl.textContent = `Player's ${turn} Turn`;
+    //     gameGifEl.src = "./images/winner.gif";
+    // } else if (winner === false && tie === true) {
+    //     return messageEl.textContent = "Game is Tied!";
+    //     gameGifEl.src = "./images/tie.gif";
+    // } else {
+    //     return messageEl.textContent = `Winner is Player ${turn}!`;
+    // }
+
+    if (winner) {
+        messageEl.textContent = `Player ${turn} Wins! 🎉`;
+        gameGifEl.src = "images/winner.gif"; // Change GIF for winner
+    } else if (tie) {
+        messageEl.textContent = "It's a Tie! 😐";
+        gameGifEl.src = "images/tie.gif"; // Change GIF for a tie
     } else {
-        return messageEl.textContent = `Winner is Player ${turn}!`;
+        messageEl.textContent = `Player ${turn}'s Turn 🤔 `;
+        // gameGifEl.src = "images/thinking.gif"; // Change GIF when playing
+        if (!board.every(cell => cell === '')) { 
+            gameGifEl.src = "images/thinking.gif"; 
+        }
     }
 };
 

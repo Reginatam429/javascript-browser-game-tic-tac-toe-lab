@@ -12,6 +12,14 @@ body {
     margin: 0;
     background-color: #FFE4E1; /* Pastel Pink */
   }
+
+  .game-gif {
+    width: 150px; 
+    height: auto;
+    display: block;
+    margin: 0 auto; 
+}
+
   
 .board {
     
