@@ -13,6 +13,23 @@ body {
     background-color: #FFE4E1; /* Pastel Pink */
   }
 
+h1 {
+    font-family: 'Sigmar', sans-serif;
+    text-align: center;
+    font-size: 70px;
+    font-weight: 600;
+    background-image: linear-gradient(to left, #553c9a, #b393d3);
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+
+h2 {
+    font-family: 'Sigmar', sans-serif;
+    color: white;
+    -webkit-text-stroke: .5px black;
+}
+
   .game-gif {
     width: 150px; 
     height: auto;
@@ -51,3 +68,9 @@ body {
     margin: 4px 2px;
     border-radius: 12px;
 }
+
+.sigmar-regular {
+    font-family: "Sigmar", serif;
+    font-weight: 400;
+    font-style: normal;
+  }  
