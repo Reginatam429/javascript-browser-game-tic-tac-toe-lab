@@ -10,9 +10,11 @@ body {
     align-items: center;
     min-height: 100vh;
     margin: 0;
+    background-color: #FFE4E1; /* Pastel Pink */
   }
   
 .board {
+    
     display: flex;
     flex-wrap: wrap;
     width: 325px;
@@ -21,10 +23,23 @@ body {
 }
   
 .sqr {
+    background-color: white;
     width: 30%;
     aspect-ratio: 1/1;
     border: 3px solid black;
     font-size: 64px;
     text-align: center;
 }
-  
+
+.reset {
+    background-color: #d16ad2;
+    border: none;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    border-radius: 12px;
+}
