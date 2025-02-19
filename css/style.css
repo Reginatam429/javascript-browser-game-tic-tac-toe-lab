@@ -30,6 +30,10 @@ h2 {
     -webkit-text-stroke: .5px black;
 }
 
+button {
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
   .game-gif {
     width: 150px; 
     height: auto;
@@ -38,22 +42,32 @@ h2 {
 }
 
   
-.board {
-    
+.board { 
     display: flex;
     flex-wrap: wrap;
     width: 325px;
     margin: 20px auto; /* centers the board */
     justify-content: center; /* Centers squares */
+    background-color: pink; /* Ensure board background is visible */
+    border: 5px solid white; /* Add a border */
+    border-radius: 20px; /* Rounded corners */
+    padding: 10px; /* Space inside the border */
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
 }
   
 .sqr {
     background-color: white;
-    width: 30%;
+    /* width: 30%; */
     aspect-ratio: 1/1;
     border: 3px solid black;
-    font-size: 64px;
-    text-align: center;
+    /* font-size: 64px;
+    text-align: center;  */
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    position: relative; /* Ensure relative positioning */
+    height: 100px; /* Set fixed height */
+    width: 100px;  /* Set fixed width */
 }
 
 .reset {
@@ -74,3 +88,9 @@ h2 {
     font-weight: 400;
     font-style: normal;
   }  
+
+  .piece-img {
+    max-width: 80%; /* Keep the image within the square */
+    max-height: 80%; 
+    object-fit: contain; 
+}

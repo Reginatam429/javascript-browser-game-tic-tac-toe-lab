@@ -43,6 +43,11 @@ const init = () => {
 
 const placePiece = (index) => {
     board[index] = turn;
+    if (turn === "X") {
+        board[index] = "images/x.png"; // Store image path for X
+    } else {
+        board[index] = "images/o.png"; // Store image path for O
+    }
 };
 //placePiece(1); //testing if placePiece updates the board
 
@@ -104,19 +109,15 @@ const handleClick = (event) => {
 const updateBoard = () => {
     squareEls.forEach((square, idx ) => {
         square.textContent = board[idx];
+        if (board[idx] === "images/x.png" || board[idx] === "images/o.png") {
+            square.innerHTML = `<img src="${board[idx]}" alt="Player Move" class="piece-img">`;
+        } else {
+            square.innerHTML = ""; // Empty square if no move yet
+        }
     })
 };
 
 const updateMessage = () => {
-    // if (winner === false && tie === false) {
-    //     messageEl.textContent = `Player's ${turn} Turn`;
-    //     gameGifEl.src = "./images/winner.gif";
-    // } else if (winner === false && tie === true) {
-    //     return messageEl.textContent = "Game is Tied!";
-    //     gameGifEl.src = "./images/tie.gif";
-    // } else {
-    //     return messageEl.textContent = `Winner is Player ${turn}!`;
-    // }
 
     if (winner) {
         messageEl.textContent = `Player ${turn} Wins! 🎉`;
